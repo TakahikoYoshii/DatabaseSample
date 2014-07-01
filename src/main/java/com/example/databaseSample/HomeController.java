@@ -1,4 +1,4 @@
-package com.example.database;
+package com.example.databaseSample;
 
 import java.text.DateFormat;
 import java.util.Date;

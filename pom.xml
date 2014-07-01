@@ -58,7 +58,15 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
+        <!-- Bean Validation (JSR-303) -->
+        
+        <dependency>
+            <artifactId>hibernate-validator</artifactId>
+            <groupId>org.hibernate</groupId>
+            <version>4.3.1.Final</version>
+        </dependency>
+
+        <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.15</version>
