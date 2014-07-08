@@ -12,6 +12,7 @@
     Hello DATA Page!  
 </h1>
  
-<P>  DB's data is ${data}. </P>
+<P>  DB's data's name is ${dataModel.name}. </P>
+<P>  DB's data's id is ${dataModel.id}. </P>
 </body>
 </html>

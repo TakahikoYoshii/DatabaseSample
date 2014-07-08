@@ -13,7 +13,14 @@
 </head>
 <body>
 	<p>
-		Hello <c:out value="${name}" />!
-	 </p>
+		Hello
+		<c:out value="${name}" />
+		!
+	</p>
+
+	<form:form action="${pageContext.request.contextPath}/echo/">
+		<button type="submit">戻る</button>
+	</form:form>
+
 </body>
 </html>
