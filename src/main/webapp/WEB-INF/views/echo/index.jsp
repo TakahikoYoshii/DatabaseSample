@@ -12,11 +12,33 @@
 <title>Echo Application</title>
 </head>
 <body>
-	<form:form modelAttribute="echoForm" action="${pageContext.request.contextPath}/echo/hello">
-		<form:label path="name">Input Your Name:</form:label>
-		<form:input path="name" />
+<h1>
+	SQL page 
+</h1>
+
+
+	<form:form modelAttribute="echoForm"
+		action="${pageContext.request.contextPath}/echo/hello"
+		method="post">
+		<form:label path="name">Please Enter SQLStatement :</form:label>
+		<br />
+		<textarea name="name" cols="50" rows="10"></textarea>
+		<br />
 		<form:errors path="name" cssStyle="color:red" />
 		<input type="submit" />
+	</form:form>
+
+	<br />
+	<form:form modelAttribute="employeeList"
+		action="${pageContext.request.contextPath}/echo/employees"
+		method="post">
+		<button type="submit" name="employee" value="従業員一覧参照">従業員一覧参照</button>
+	</form:form>
+
+	<form:form modelAttribute="customerList"
+		action="${pageContext.request.contextPath}/echo/customers"
+		method="post">
+		<button type="submit" name="employee" value="顧客一覧参照">顧客一覧参照</button>
 	</form:form>
 </body>
 </html>

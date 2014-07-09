@@ -1,0 +1,15 @@
+	  
+CREATE TABLE sample (
+	id serial,
+	name text
+);
+
+ALTER TABLE sample
+	ADD PRIMARY KEY (id);
+
+ALTER TABLE sample
+	ADD UNIQUE (name);
+
+DML
+insert into sample values(1,'test');
+	     
