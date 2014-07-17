@@ -2,18 +2,13 @@ package com.example.databaseSample.model;
 
 public class Customer {
 	private int customerid;
-	private int customercode;
 	private String customername;
 	private String address;
-	private int customerclassid;
-	private int prefecturalid;
+	private String customerclassname;
+	private String prefecturalname;
 	
 	public void setCustomerid(int customerid){
 		this.customerid = customerid;
-	}
-
-	public void setCustomercode(int customercode){
-		this.customercode = customercode;
 	}
 
 	public void setCustomername(String customername){
@@ -24,20 +19,16 @@ public class Customer {
 		this.address = address;
 	}
 
-	public void setCustomerclassid(int customerclassid){
-		this.customerclassid = customerclassid;
+	public void setCustomerclassname(String customerclassname){
+		this.customerclassname = customerclassname;
 	}
 
-	public void setPrefecturalid(int prefecturalid){
-		this.prefecturalid = prefecturalid;
+	public void setPrefecturalname(String prefecturalname){
+		this.prefecturalname = prefecturalname;
 	}
 
 	public int getCustomerid(){
 		return customerid;
-	}
-
-	public int getCustomercode(){
-		return customercode;
 	}
 
 	public String getCustomername(){
@@ -48,11 +39,11 @@ public class Customer {
 		return address;
 	}
 
-	public int getCustomerclassid(){
-		return customerclassid;
+	public String getCustomerclassname(){
+		return customerclassname;
 	}
 
-	public int getPrefecturalid(){
-		return prefecturalid;
+	public String getPrefecturalname(){
+		return prefecturalname;
 	}
 }

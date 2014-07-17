@@ -20,20 +20,18 @@
 	<table border="1">
 		<tr>
 			<th>顧客番号</th>
-			<th>顧客コード</th>
 			<th>顧客名</th>
 			<th>住所</th>
 			<th>顧客グループ</th>
-			<th>都道府県番号</th>
+			<th>都道府県</th>
 		</tr>
 		<c:forEach items="${customerList}" var="customer">
 			<tr>
 				<td><c:out value="${customer.customerid}" /></td>
-				<td><c:out value="${customer.customercode}" /></td>
 				<td><c:out value="${customer.customername}" /></td>
 				<td><c:out value="${customer.address}" /></td>
-				<td><c:out value="${customer.customerclassid}" /></td>
-				<td><c:out value="${customer.prefecturalid}" /></td>
+				<td><c:out value="${customer.customerclassname}" /></td>
+				<td><c:out value="${customer.prefecturalname}" /></td>
 			</tr>
 		</c:forEach>
 	</table>
