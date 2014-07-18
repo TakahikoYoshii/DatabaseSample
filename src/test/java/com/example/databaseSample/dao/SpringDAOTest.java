@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.example.databaseSample.model.Customer;
 import com.example.databaseSample.model.Employee;
 
 
@@ -23,7 +24,7 @@ public class SpringDAOTest {
 	private SpringDAO dao;
 	
 	@Test
-	public void test() {
+	public void test_employee() {
 		assertThat(dao, notNullValue());
 		List<Employee> employeelist = dao.findEmployees();
 		assertThat(employeelist, notNullValue());
@@ -36,6 +37,21 @@ public class SpringDAOTest {
             System.out.print(dto.getHirefiscalyear());
             System.out.print(dto.getBirthday());
             System.out.print(dto.getBloodtype());
+            System.out.println();
+        }
+	}
+
+	@Test
+	public void test_customer() {
+		assertThat(dao, notNullValue());
+		List<Customer> customerlist = dao.findCustomers();
+		assertThat(customerlist, notNullValue());
+        for (Customer dto : customerlist) {
+            System.out.print(dto.getCustomerid());
+            System.out.print(dto.getCustomername());
+            System.out.print(dto.getAddress());
+            System.out.print(dto.getCustomerclassname());
+            System.out.print(dto.getPrefecturalname());
             System.out.println();
         }
 	}

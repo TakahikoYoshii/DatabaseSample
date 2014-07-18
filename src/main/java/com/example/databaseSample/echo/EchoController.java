@@ -53,4 +53,11 @@ public class EchoController {
 		model.addAttribute("customerList", customerlist);
 		return "echo/customers";
 	}
+
+	@RequestMapping("result")
+	public String result(Model model){
+		List<String> result = springdao.executeSQL();
+		model.addAttribute("result", result);
+		return "echo/result";
+	}
 }

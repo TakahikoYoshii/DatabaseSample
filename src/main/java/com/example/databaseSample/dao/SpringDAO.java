@@ -29,9 +29,18 @@ public class SpringDAO {
 	public List<Customer> findCustomers() {
 		RowMapper<Customer> mapper = new BeanPropertyRowMapper<Customer>(
 				Customer.class);
+		String sql = "SELECT CustomerID,CustomerName,Address"
+				+ ",(SELECT CustomerClassName FROM CustomerClasses WHERE Customers.CustomerClassID = CustomerClasses.CustomerClassID)"
+				+ ",(SELECT PrefecturalName FROM Prefecturals WHERE Customers.PrefecturalID = Prefecturals.PrefecturalID)"
+				+ "FROM Customers ;";
 		List<Customer> customerList = jdbcTemplate.query(
-				"select * from customers", mapper);
+				sql, mapper);
 		return customerList;
+	}
+
+	public List<String> executeSQL(String sql) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
