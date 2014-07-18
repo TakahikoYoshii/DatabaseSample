@@ -12,19 +12,17 @@
 <title>Echo Application</title>
 </head>
 <body>
-<h1>
-	SQL page 
-</h1>
+	<h1>SQL page</h1>
 
 
 	<form:form modelAttribute="echoForm"
-		action="${pageContext.request.contextPath}/echo/hello"
-		method="post">
-		<form:label path="name">Please Enter SQLStatement :</form:label>
+		action="${pageContext.request.contextPath}/echo/result" method="post">
+		<form:label path="sql">Please Enter SQLStatement :</form:label>
 		<br />
-		<textarea name="name" cols="50" rows="10"></textarea>
+		<textarea name="sql" cols="50" rows="10"></textarea>
+<%-- 		<form:input path="sql" type="text" name="sql"></form:input>--%>
 		<br />
-		<form:errors path="name" cssStyle="color:red" />
+		<form:errors path="sql" cssStyle="color:red" />
 		<input type="submit" />
 	</form:form>
 
@@ -38,7 +36,7 @@
 	<form:form modelAttribute="customerList"
 		action="${pageContext.request.contextPath}/echo/customers"
 		method="post">
-		<button type="submit" name="employee" value="顧客一覧参照">顧客一覧参照</button>
+		<button type="submit" name="customer" value="顧客一覧参照">顧客一覧参照</button>
 	</form:form>
 </body>
 </html>

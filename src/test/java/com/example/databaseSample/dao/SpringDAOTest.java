@@ -3,6 +3,8 @@ package com.example.databaseSample.dao;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.junit.Test;
@@ -54,5 +56,18 @@ public class SpringDAOTest {
             System.out.print(dto.getPrefecturalname());
             System.out.println();
         }
+	}
+
+	@Test
+	public void test_executeSQL() {
+		assertThat(dao, notNullValue());
+		String sql = "select * from customers;";
+		ArrayList<LinkedHashMap<String, String>> resultlist = dao.executeSQL(sql);
+		assertThat(resultlist, notNullValue());
+		LinkedHashMap<String, String> map = resultlist.get(0);
+        for (String key : map.keySet()) {
+            System.out.print(key+":"+map.get(key));
+        }
+        System.out.println();
 	}
 }

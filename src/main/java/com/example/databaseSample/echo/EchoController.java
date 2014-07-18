@@ -1,5 +1,6 @@
 package com.example.databaseSample.echo;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -31,14 +32,14 @@ public class EchoController {
 		return "echo/index";
 	}
 	
-	@RequestMapping("hello")
-	public String hello(@Valid EchoForm echoForm, BindingResult result, Model model){
-		if(result.hasErrors()){
-			return "echo/index";
-		}
-		model.addAttribute("name", echoForm.getName());
-		return "echo/hello";
-	}
+//	@RequestMapping(value = "hello")
+//	public String hello(@Valid EchoForm echoForm, BindingResult result, Model model){
+//		if(result.hasErrors()){
+//			return "echo/index";
+//		}
+//		model.addAttribute("name", echoForm.getName());
+//		return "echo/hello";
+//	}
 
 	@RequestMapping(value = "employees")
 	public String employees(Employee employee, Model model){
@@ -54,10 +55,13 @@ public class EchoController {
 		return "echo/customers";
 	}
 
-	@RequestMapping("result")
-	public String result(Model model){
-		List<String> result = springdao.executeSQL();
-		model.addAttribute("result", result);
+	@RequestMapping(value = "result")
+	public String result(@Valid EchoForm echoForm, BindingResult result, String sql, Model model){
+		if(result.hasErrors()){
+			return "echo/index";
+		}
+		List<LinkedHashMap<String, String>> resultList = springdao.executeSQL(echoForm.getSql());
+		model.addAttribute("result", resultList);
 		return "echo/result";
 	}
 }

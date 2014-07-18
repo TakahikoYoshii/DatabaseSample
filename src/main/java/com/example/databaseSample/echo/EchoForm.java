@@ -11,13 +11,13 @@ public class EchoForm implements Serializable{
 
 	@NotNull
 	@Size(min = 1, max = 100)
-	private String name;
+	private String sql;
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setSql(String sql) {
+		this.sql = sql;
 	}
 	
-	public String getName(){
-		return this.name;
+	public String getSql(){
+		return this.sql;
 	}
 }
