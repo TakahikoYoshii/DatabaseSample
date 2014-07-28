@@ -10,7 +10,8 @@ public class EchoForm implements Serializable{
 	private static final long serialVersionUID = -5706357630590327715L;
 
 	@NotNull
-	@Size(min = 1, max = 100)
+	@Size(min = 1, max = 1000
+	)
 	private String sql;
 	
 	public void setSql(String sql) {
