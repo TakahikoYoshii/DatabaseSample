@@ -14,11 +14,11 @@
 
 	<p>■入力フォーム</p>
 
-	<form:form modelAttribute="bloodType_birthYear" action="${pageContext.request.contextPath}/eemployee_form/" method="post">
+	<form:form modelAttribute="employeeForm" action="${pageContext.request.contextPath}/employee_form/result" method="post">
 
 		血液型：
-		<form:input path="bloodType" type="text" size="40" />
-		<form:errors path="bloodType" cssStyle="color:red" />
+		<form:input path="bloodtype" type="text" size="40" />
+		<form:errors path="bloodtype" cssStyle="color:red" />
 		<form:errors path="isBloodtype" cssStyle="color:red" />
 		<br />
 		を：

@@ -18,6 +18,9 @@
 <form action="data" method="get">
 <button type="submit" name="home_data" value="" >次へ</button>
 </form>
+<form action="employee_form" method="get">
+<button type="submit" name="home_employee_form" value="" >フォームへ</button>
+</form>
 
 <hr>
 <P>  The time on the server is ${serverTime}. </P>

@@ -1,4 +1,4 @@
-package com.example.databaseSample.form;
+package com.example.databaseSample.model;
 
 import java.io.Serializable;
 
