@@ -5,7 +5,7 @@
 
 <configuration>
 
-	<properties resource="org/mybatis/example/config.properties">
+	<properties resource="/src/main/resources/properties.database.properties">
 		<property name="driver" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql:spring" />
 		<property name="username" value="postgres" />
@@ -35,15 +35,15 @@
 	</typeAliases>
 
 	<typeHandlers>
-		<package name="org.mybatis.example" />
+		<package name="com.example.databaseSample" />
 	</typeHandlers>
 
-	<objectFactory type="org.mybatis.example.ExampleObjectFactory">
+	<objectFactory type="com.example.databaseSample.ExampleObjectFactory">
 		<property name="someProperty" value="100" />
 	</objectFactory>
 
 	<plugins>
-		<plugin interceptor="org.mybatis.example.ExamplePlugin">
+		<plugin interceptor="com.example.databaseSample.ExamplePlugin">
 			<property name="someProperty" value="100" />
 		</plugin>
 	</plugins>
@@ -67,7 +67,7 @@
 	</databaseIdProvider>
 
 	<mappers>
-		<mapper resource="org/mybatis/builder/EmployeeMapper.xml" />
+		<mapper resource="/src/main/resources/mapper.EmployeeMapper.xml" />
 	</mappers>
 
 </configuration>
